@@ -20,11 +20,11 @@ There are several fields for each ride:
 - **start_lat**, **start_lng**, **end_lat**, and **end_lng** - Coordinates of the stations the ride started at and ended at
 
 ### Cleaning & Transforming
-For the cleaning process, I began by compiling the individual CSV data files into one large file. I believe the total number of rows was about 5.3 million. Next, I used a simple [R script]() to create some cleaner date columns (**date**, **month**, **day**, and **year**) as well as a column which calculated the length of the ride (**ride_length**).
+For the cleaning process, I began by compiling the individual CSV data files into one large file. I believe the total number of rows was about 5.3 million. Next, I used a simple [R script](CyclisticTransform.R) to create some cleaner date columns (**date**, **month**, **day**, and **year**) as well as a column which calculated the length of the ride (**ride_length**).
 
-After that, I imported the CSV file into a table called **Rides** in a new SQL Server database **Cyclistic**. I then performed some [data cleaning]() in SQL such as selecting and deleting rides missing station names, as well as rides using stations specifically for testing or maintenance. I also removed any rides shorter than 60 seconds or longer than 24 hours. After this, I was ready to begin my analysis.
+After that, I imported the CSV file into a table called **Rides** in a new SQL Server database **Cyclistic**. I then performed some [data cleaning](CyclisticCleaning.sql) in SQL such as selecting and deleting rides missing station names, as well as rides using stations specifically for testing or maintenance. I also removed any rides shorter than 60 seconds or longer than 24 hours. After this, I was ready to begin my analysis.
 ## Data Analysis
-When beginning my analysis, I realized that for such a large dataset, it wouldn't really be possible to look at each individual data point. Instead, for each experiment I used [SQL queries]() to summarize the data and group it in meaningful ways. Then I took the resulting, smaller tables and used Tableau to [visualize]() them and look for any inisghts that stood out. I looked at many possible factors to determine what differences exist between casual and member riders.
+When beginning my analysis, I realized that for such a large dataset, it wouldn't really be possible to look at each individual data point. Instead, for each experiment I used [SQL queries](CyclisticAnalysis.sql) to summarize the data and group it in meaningful ways. Then I took the resulting, smaller tables and used Tableau to [visualize](CyclisticViz.twbx) them and look for any inisghts that stood out. I looked at many possible factors to determine what differences exist between casual and member riders.
 
 A few of the experiments I did:
 - What days of the week are most popular for member vs casual riders?
